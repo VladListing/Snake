@@ -12,6 +12,7 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("Программа змейка");
 
+
             Console.ReadLine();
         }
     }
