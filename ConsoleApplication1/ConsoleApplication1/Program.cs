@@ -11,8 +11,6 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             Console.WriteLine("Программа змейка");
-
-
             Console.ReadLine();
         }
     }
