@@ -197,7 +197,7 @@ class Program
             pList.Add(P4);
 
 
-            //System.Console.WriteLine();// вставка пустой строки для отступа
+            System.Console.WriteLine();// вставка пустой строки для отступа
             //...........................организация перебора с помощью цикла "foreach".............................................
             foreach (Point element_spiska in pList)
             {
