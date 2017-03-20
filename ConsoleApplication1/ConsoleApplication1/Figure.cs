@@ -13,7 +13,7 @@ namespace ConsoleApplication1
 
         //.........................................................Создаем метод Выводящий содержимое списка "pList" на экран консоли.........................................
 
-        public void Drow()
+        public void Drow()//создаем метод "Drow" который выводит содержимое списка "pList" на экран
         {
 
             foreach (Point element_spiska in pList)

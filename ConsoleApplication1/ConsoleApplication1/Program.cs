@@ -220,7 +220,7 @@ class Program
             Console.SetBufferSize(82,28); //устанавливаем фиксированный размер окна консоли (без полосы прокрутки)
 
 
-            //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR  Создание рамки  для змейки   RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+            //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR  Создание рамки  для змейки   RRRRRRRRRRR(РАМКА)RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
             //.......................................создание обьекта класса "HorizontalLine" c задаваемыми параметрами координат начала и длинны...................................
             HorizontalLine H_Verx_line = new HorizontalLine(1, 77, 1, '+');
@@ -242,16 +242,26 @@ class Program
             V_Pravaia_line.Drow();//вывод на экран консоли линии
             //....................................................................................................................................................................
 
-            //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRКККККККККККККККККККККККККККККККRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+            //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRКККККККККККККККККККККККККККККККRRRRRRRRRR(РАМКА)RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
 
             //...........отрисовка точек........................
 
             Point P = new Point(5,5,'*'); //создание обьекта класса "Point"
-            P.Draww();//вывод на экран консоли точки
+            Snake snake= new Snake(P/*хвост*/, 10/*длинна*/, Direction.RIGHT /*направление движения*/);//создание обьекта класса "Snake"
+            snake.Drow();//вывод на экран консоли списка содержащего точки направленные в одном из четырех направлений
+                         //..................перемещение змейки в пространстве...................
+
+                          snake.Move();
+                         
+            
+                         //.......................................................................
+
+
+
             //..................................................
 
-            
+
             ////===========================================================================================================
 
 

@@ -25,7 +25,8 @@ namespace ConsoleApplication1
         //}
         //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 
-        //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK конструктор для класса "Point" KKKKKKKKK(с присвоением )KKKKKKKKK(вариант-2)KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+        //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK конструктор для класса "Point" KKKKKKKKK(с присвоением )KKKKKKKKK  (вариант-2)  KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+        //принимает в качестве параметров  значения для  координат будующей точки , а также символ который будет выведен в этих координатах 
         public Point(int _X, int _Y, char _sym )
         {
             X = _X;
@@ -35,15 +36,56 @@ namespace ConsoleApplication1
         }
         //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 
+        //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK конструктор для класса "Point" KKKKKKKKK(с присвоением )KKKKKKKKK  (вариант-3   )KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+        //принимает в качестве параметра точку далее разбирает ее на координаты 
+        public Point(Point p)
+        {
+            X = p.X;
+            Y = p.Y;
+            sym = p.sym;
+
+        }
+        //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 
 
-        //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM процедура вывода заданного символа в заданной координате %%%%%%%%%%(Метод, функция , класса "Point" )MMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+        //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM МЕТОД  ,процедура вывода заданного символа в заданной координате %%%%%%%%%%(Метод, функция , класса "Point" )MMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         //public void Draww(int X, int Y, char sym)
         public void Draww()
         {
 
             Console.SetCursorPosition(X, Y);//задаем координаты курсора
             Console.Write(sym); //выводим курсор на экран в заданных координатах
+
+        }
+        //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+
+        //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM МЕТОД , сдвигает точку на заданное колличество позиций по осям координат  ,MMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+        //public void Draww(int X, int Y, char sym)
+        public void Move(int offset /*растояние сдвига*/, Direction direction /*направление сдвига*/)
+        {
+            
+            if (direction == Direction.RIGHT)
+            {
+                X = X + offset;
+            }
+
+            else if (direction == Direction.LEFT)
+            {
+                X = X - offset;
+            }
+
+            else if (direction == Direction.UP)
+            {
+                Y = Y + offset;
+            }
+
+            else if (direction == Direction.DOWN)
+            {
+                Y = Y - offset;
+            }
+
 
         }
         //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
