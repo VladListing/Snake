@@ -25,7 +25,9 @@ namespace ConsoleApplication1
         //}
         //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 
-        //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK конструктор для класса "Point" KKKKKKKKK(с присвоением )KKKKKKKKK  (вариант-2)  KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+        
+        //======================= Полиморфизм ===(перегрузка методов)=== обьявление двух методов с одним именем и разными параметрами ===========================================================   
+        //---------------------------- конструктор для класса "Point" --------(с присвоением )-------  (вариант-2) ---------------------------------------
         //принимает в качестве параметров  значения для  координат будующей точки , а также символ который будет выведен в этих координатах 
         public Point(int _X, int _Y, char _sym )
         {
@@ -34,9 +36,9 @@ namespace ConsoleApplication1
           sym = _sym;
 
         }
-        //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+        //-------------------------------------------------------------------------------------------------------------------------------------------------
 
-        //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK конструктор для класса "Point" KKKKKKKKK(с присвоением )KKKKKKKKK  (вариант-3   )KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+        //-------------------------- конструктор для класса "Point" KKKKKKKKK(с присвоением )KKKKKKKKK  (вариант-3   )-------------------------------------
         //принимает в качестве параметра точку далее разбирает ее на координаты 
         public Point(Point p)
         {
@@ -45,8 +47,8 @@ namespace ConsoleApplication1
             sym = p.sym;
 
         }
-        //KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
-
+        //---------------------------------------------------------------------------------------------------------------------------------------------------
+        //========================================================================================================================================================================================== 
 
 
         //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM МЕТОД  ,процедура вывода заданного символа в заданной координате %%%%%%%%%%(Метод, функция , класса "Point" )MMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -54,9 +56,19 @@ namespace ConsoleApplication1
         public void Draww()
         {
 
-            Console.SetCursorPosition(X, Y);//задаем координаты курсора
-            Console.Write(sym); //выводим курсор на экран в заданных координатах
+            Console.SetCursorPosition(X, Y);//задаем координаты для последующего вывода символа
+            Console.Write(sym); //выводим символ на экран в заданных координатах
 
+        }
+        //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+        //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM МЕТОД  ,процедура вывода заданного пробела символа в заданной координате %%%%%%%%%%(Метод, функция , класса "Point" )MMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+        
+        public void Clear()
+        {
+            sym = ' '; //символом хвостовой точки станомиться пробел, пусто
+
+            Draww();// выводим пробел на экран
         }
         //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
@@ -78,12 +90,12 @@ namespace ConsoleApplication1
 
             else if (direction == Direction.UP)
             {
-                Y = Y + offset;
+                Y = Y - offset;
             }
 
             else if (direction == Direction.DOWN)
             {
-                Y = Y - offset;
+                Y = Y + offset;
             }
 
 

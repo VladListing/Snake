@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using static System.Collections.IEnumerable;
 
@@ -29,6 +30,8 @@ class Program
 
         static void Main(string[] args)   // точка входа в исполнение программы
         {
+
+
             ////=============================== организация вывода на экран точки 1    ========
             //int X1 = 5;
             //int Y1 = 5;
@@ -216,7 +219,7 @@ class Program
             //line.Drow();
             //....................................................................................................................................................................
 
-
+            
             Console.SetBufferSize(82,28); //устанавливаем фиксированный размер окна консоли (без полосы прокрутки)
 
 
@@ -244,18 +247,27 @@ class Program
 
             //RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRКККККККККККККККККККККККККККККККRRRRRRRRRR(РАМКА)RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
-
+            
             //...........отрисовка точек........................
 
-            Point P = new Point(5,5,'*'); //создание обьекта класса "Point"
+            Point P = new Point(5,5,'*'); //создание обьекта класса "Point"(это начальная точка с координатами относительно которой будут строиться другие точки змейки в списке )
             Snake snake= new Snake(P/*хвост*/, 10/*длинна*/, Direction.RIGHT /*направление движения*/);//создание обьекта класса "Snake"
             snake.Drow();//вывод на экран консоли списка содержащего точки направленные в одном из четырех направлений
-                         //..................перемещение змейки в пространстве...................
 
-                          snake.Move();
-                         
-            
-                         //.......................................................................
+            //..................перемещение змейки в пространстве...................
+
+            while(true)  //цикл постоянного безостановочного перебора
+            {
+                if (Console.KeyAvailable)// проверка былали нажата какаялибо клавиша с прошлого раза
+                {
+                    ConsoleKeyInfo Key = Console.ReadKey();
+                    snake.HandleKey(Key.Key);//вызов метода HandleKey находящегося в классе snake
+                }
+
+                Thread.Sleep(200);//задержка
+                snake.Move();  //вызов метода Move находящегося в классе snake
+            }
+            //.......................................................................
 
 
 
@@ -288,7 +300,7 @@ class Program
 
 
 
-            Console.ReadLine();
+            //Console.ReadLine();
             //===============================================================================
         }
 
