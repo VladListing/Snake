@@ -102,5 +102,16 @@ namespace ConsoleApplication1
         }
         //MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
+        //----------------------------------------------------------------------Метод----(сравниваю совпадают ли координаты точек)-------------------------------------------------
+        public bool IsHit(Point p)
+        {
+            return p.X == this.X && p.Y == this.Y;
+
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
     }
 }
