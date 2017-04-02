@@ -254,7 +254,7 @@ class Program
             
 
             //-----------------------------------создание еды------------------------------------------------------------
-            Foodcreator foodcreator = new Foodcreator(77, 25, '$' );
+            Foodcreator foodcreator = new Foodcreator(77, 24, '$' );
             Point food = foodcreator.CreateFood();
             food.Draww();// вывод еды на экран
             //-----------------------------------------------------------------------------------------------
