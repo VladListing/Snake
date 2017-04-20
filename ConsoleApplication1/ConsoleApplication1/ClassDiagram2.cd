@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleApplication1.Foodcreator">
-    <Position X="7" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAABAAgAAAAAAAAAAAAAAAAQAAAAQAAA=</HashCode>
       <FileName>Foodcreator.cs</FileName>
